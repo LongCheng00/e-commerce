@@ -20,7 +20,7 @@ A full-stack code challenge
 
 \-----Input: product id and purchase quantity.
 
-\-----Check if there's enough stock. 
+\-----Check if there's enough stock.
 
 \-----If success, reduce stock.
 

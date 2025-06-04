@@ -1,0 +1,10 @@
+{
+  "name": "demo-server",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "install": "mvn install",
+    "dev": "mvn exec:java -Dexec.mainClass=\"com.example.demo.DemoApplication\"",
+    "build": "mvn compile"
+  }
+}
