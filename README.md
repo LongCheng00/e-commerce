@@ -12,31 +12,32 @@ A full-stack code challenge
 
 ## Features
 
-\[\]-Backend: Spring Boot3.0+, Java17+, In-memory storage 
+\[\]-Backend: Spring Boot3.0+, Java17+, In-memory storage
 
-\[\]--API GET /products, return a list of products(id,name,price,stock) 
+\[\]--API GET /products, return a list of products(id,name,price,stock)
 
-\[\]--API POST /orders, create a new order. 
+\[\]--API POST /orders, create a new order.
 
-\-----Input: product id and purchase quantity. 
+\-----Input: product id and purchase quantity.
 
-\-----Check if there's enough stock. ---If success, reduce stock. 
+\-----Check if there's enough stock. 
 
-\-----Return: order ID and total price. 
+\-----If success, reduce stock.
 
-\[\]--API GET /orders/{id} (Optional) 
+\-----Return: order ID and total price.
 
-\[\]-Frontend: React, Taro, Typescript 
+\[\]--API GET /orders/{id} (Optional)
 
-\[\]--Display the product list 
+\[\]-Frontend: React, Taro, Typescript
 
-\[\]--Allow users to select a product, enter the quantity, and place an order 
+\[\]--Display the product list
 
-\[\]--After a successful order, display the order confirmation(order ID,total price) 
+\[\]--Allow users to select a product, enter the quantity, and place an order
 
-\[\]-Docs: how to run both backend and frontend. 
+\[\]--After a successful order, display the order confirmation(order ID,total price)
+
+\[\]-Docs: how to run both backend and frontend.
 
 \[\]-Docs: the example API calls backend apis(curl or Postman)
-
 
 
