@@ -1,6 +1,14 @@
 package com.example.demo.service;
 
 import com.example.demo.model.*;
+import com.example.demo.service.ProductService;
+import com.example.demo.model.CreateOrderRequest;
+import com.example.demo.model.Order;
+import com.example.demo.model.OrderItem;
+import com.example.demo.model.OrderResponse;
+import com.example.demo.model.Product;
+import com.example.demo.service.OrderService;
+
 import org.springframework.stereotype.Service;
 // import org.springframework.transaction.annotation.Transactional;
 
@@ -9,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -37,7 +46,7 @@ public class OrderServiceImpl implements OrderService {
       Product product = productService.getProductById(item.productId())
           .orElseThrow(() -> new IllegalArgumentException("Product does not exist: " + item.productId()));
 
-      // 3. Reduce stock        
+      // 3. Reduce stock
       if (!productService.reduceStock(item.productId(), item.quantity())) {
         throw new IllegalStateException("Insufficient stock: " + product.name());
       }
@@ -56,7 +65,7 @@ public class OrderServiceImpl implements OrderService {
     Long orderId = orderIdGenerator.getAndIncrement();
     Order order = new Order(
         orderId,
-        List.copyOf(orderItems),  
+        List.copyOf(orderItems),
         totalPrice,
         LocalDateTime.now());
 
@@ -69,17 +78,24 @@ public class OrderServiceImpl implements OrderService {
   private void validateStock(List<CreateOrderRequest.OrderItemRequest> items) {
     for (CreateOrderRequest.OrderItemRequest item : items) {
       Product product = productService.getProductById(item.productId())
-          .orElseThrow(() -> new IllegalArgumentException("产品不存在: " + item.productId()));
+          .orElseThrow(() -> new IllegalArgumentException("Product does not exist: " + item.productId()));
 
       if (!productService.checkStock(item.productId(), item.quantity())) {
-        System.out.println("检查库存: " + product.name() +
-            " (当前库存: " + product.stock() +
-            ", 需求: " + item.quantity() + ")");
         throw new IllegalArgumentException(
-            "库存不足: " + product.name() +
-                " (当前库存: " + product.stock() +
-                ", 需求: " + item.quantity() + ")");
+            "Insufficient stock: " + product.name() +
+                " (Stock: " + product.stock() +
+                ", Required: " + item.quantity() + ")");
       }
     }
+  }
+
+  @Override
+  public List<Order> getAllOrders() {
+    return new ArrayList<>(orderDatabase.values());
+  }
+
+  @Override
+  public Optional<Order> getOrderById(Long orderId) { 
+    return Optional.ofNullable(orderDatabase.get(orderId));
   }
 }

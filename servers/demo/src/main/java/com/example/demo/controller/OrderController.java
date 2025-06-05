@@ -30,12 +30,18 @@ public class OrderController {
     // Logic to create an order
     var orderResponse = orderService.createOrder(req);
     return ResponseEntity.ok(orderResponse);
-  } 
+  }
 
-  // @GetMapping("/{id}")
-  // public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-  //   return shopService.getProductById(id)
-  //       .map(ResponseEntity::ok)
-  //       .orElseGet(() -> ResponseEntity.notFound().build());
-  // }
+  @GetMapping
+  public List<Order> getOrders() {
+    // Logic to retrieve all orders
+    return orderService.getAllOrders();
+  }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
+    return orderService.getOrderById(id)
+        .map(ResponseEntity::ok)
+        .orElseGet(() -> ResponseEntity.notFound().build());
+  }
 }

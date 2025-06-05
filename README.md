@@ -4,7 +4,21 @@ A full-stack code challenge
 
 ## How to run
 
+To running this demo, the **java**, **mvn**, **nodejs** and **pnpm** should be ready in the environment.
+
 ### How to run backend
+
+* Install jdk17+
+
+  <https://openjdk.org/projects/jdk/17/>
+* Install maven
+
+  <https://maven.apache.org/>
+* Run below script in root project dir
+
+  ```bash
+  pnpm dev:back
+  ```
 
 ### How to run frontend
 
@@ -18,7 +32,7 @@ curl --location --request GET 'localhost:8088/products'
 
 * Call post /orders example
 
-  ```bash
+```bash
   curl --location --request POST 'localhost:8088/orders' \
   --header 'Content-Type: application/json' \
   --data-raw '{
@@ -27,16 +41,21 @@ curl --location --request GET 'localhost:8088/products'
       {"productId": 3, "quantity": 1}
     ]
   }'
-  ```
+```
 
+* Call get /orders/{id} example
+
+  ```bash
+  curl --location --request GET 'localhost:8088/orders/1'
+  ```
 
 ## Features
 
-\[\]-Backend: Spring Boot3.0+, Java17+, In-memory storage
+\[-\]-Backend: Spring Boot3.0+, Java17+, In-memory storage
 
 \[-\]--API GET /products, return a list of products(id,name,price,stock)
 
-\[\]--API POST /orders, create a new order.
+\[-\]--API POST /orders, create a new order.
 
 \-----Input: product id and purchase quantity.
 
@@ -46,7 +65,7 @@ curl --location --request GET 'localhost:8088/products'
 
 \-----Return: order ID and total price.
 
-\[\]--API GET /orders/{id} (Optional)
+\[-\]--API GET /orders/{id} (Optional)
 
 \[\]-Frontend: React, Taro, Typescript
 
