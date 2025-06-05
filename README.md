@@ -10,11 +10,17 @@ A full-stack code challenge
 
 ### Example API calls
 
+* Call get /products example
+
+```bash
+curl --location --request GET 'localhost:8088/products'
+```
+
 ## Features
 
 \[\]-Backend: Spring Boot3.0+, Java17+, In-memory storage
 
-\[\]--API GET /products, return a list of products(id,name,price,stock)
+\[-\]--API GET /products, return a list of products(id,name,price,stock)
 
 \[\]--API POST /orders, create a new order.
 

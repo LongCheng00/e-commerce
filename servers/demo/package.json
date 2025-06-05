@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "install": "mvn install",
-    "dev": "mvn exec:java -Dexec.mainClass=\"com.example.demo.DemoApplication\"",
-    "build": "mvn compile"
+    "dev1": "mvn exec:java -Dexec.mainClass=\"com.example.demo.DemoApplication\"",
+    "dev": "mvn spring-boot:run",
+    "build1": "mvn compile",
+    "build":"mvn clean package"
   }
 }
