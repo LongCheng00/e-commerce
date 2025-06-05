@@ -1,4 +1,10 @@
-spring:
+spring: 
+  devtools:
+    restart:
+      enabled: true
+    remote:
+      debug:
+        enabled: true 
   application:
     name: demo
 server:

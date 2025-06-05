@@ -16,6 +16,20 @@ A full-stack code challenge
 curl --location --request GET 'localhost:8088/products'
 ```
 
+* Call post /orders example
+
+  ```bash
+  curl --location --request POST 'localhost:8088/orders' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "items": [
+      {"productId": 2, "quantity": 1},
+      {"productId": 3, "quantity": 1}
+    ]
+  }'
+  ```
+
+
 ## Features
 
 \[\]-Backend: Spring Boot3.0+, Java17+, In-memory storage

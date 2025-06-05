@@ -1,11 +1,11 @@
 {
   "name": "demo-server",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "install": "mvn install",
     "dev1": "mvn exec:java -Dexec.mainClass=\"com.example.demo.DemoApplication\"",
-    "dev": "mvn spring-boot:run",
+    "dev": "mvn spring-boot:run -Dspring-boot.run.profiles=debug",
     "build1": "mvn compile",
     "build":"mvn clean package"
   }
