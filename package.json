@@ -2,6 +2,7 @@
   "name":"e-commerce",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev:back":"pnpm --filter demo-server dev",
     "dev:front":"pnpm run dev --workspace=front"

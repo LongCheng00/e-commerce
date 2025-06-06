@@ -6,14 +6,15 @@ A full-stack code challenge
 
 To running this demo, the **java**, **mvn**, **nodejs** and **pnpm** should be ready in the environment.
 
-### How to run backend
-
 * Install jdk17+
 
   <https://openjdk.org/projects/jdk/17/>
 * Install maven
 
   <https://maven.apache.org/>
+
+### How to run backend
+
 * Run below script in root project dir
 
   ```bash
