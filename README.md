@@ -29,6 +29,8 @@ Run below script in root project dir
 pnpm dev:front
 ```
 
+Wechat Devtools import the weapp in the {project}/apps/shop/dist/weapp. Wechat Devtools can view the weapp.
+
 ### Example API calls
 
 * Call get /products example
