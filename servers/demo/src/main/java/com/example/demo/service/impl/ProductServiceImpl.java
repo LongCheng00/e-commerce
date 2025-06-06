@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public boolean reduceStock(Long productId, int quantity) {
     var p0 = productDatabase.get(productId);
-    return productDatabase.computeIfPresent(productId, (id, product) -> {
+    return p0 != null && productDatabase.computeIfPresent(productId, (id, product) -> {
       if (product.stock() >= quantity) {
         return new Product(
             product.id(),
