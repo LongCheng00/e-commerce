@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:back":"pnpm --filter demo-server dev",
-    "dev:front":"pnpm run dev --workspace=front"
+    "dev:front":"pnpm --filter shop dev:weapp"
   },
   "devDependencies": { 
     

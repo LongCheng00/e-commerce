@@ -23,6 +23,12 @@ To running this demo, the **java**, **mvn**, **nodejs** and **pnpm** should be r
 
 ### How to run frontend
 
+Run below script in root project dir
+
+```bash
+pnpm dev:front
+```
+
 ### Example API calls
 
 * Call get /products example
@@ -68,16 +74,16 @@ curl --location --request GET 'localhost:8088/products'
 
 \[-\]--API GET /orders/{id} (Optional)
 
-\[\]-Frontend: React, Taro, Typescript
+\[-\]-Frontend: React, Taro, Typescript
 
-\[\]--Display the product list
+\[-\]--Display the product list
 
-\[\]--Allow users to select a product, enter the quantity, and place an order
+\[-\]--Allow users to select a product, enter the quantity, and place an order
 
-\[\]--After a successful order, display the order confirmation(order ID,total price)
+\[-\]--After a successful order, display the order confirmation(order ID,total price)
 
-\[\]-Docs: how to run both backend and frontend.
+\[-\]-Docs: how to run both backend and frontend.
 
-\[\]-Docs: the example API calls backend apis(curl or Postman)
+\[-\]-Docs: the example API calls backend apis(curl or Postman)
 
 
